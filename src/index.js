@@ -12,6 +12,7 @@ const Question = props => {
       <h2>{prompt}</h2>
       {choices.map(choiceProps => (
         <Choice
+          key={choiceProps.id}
           imgSrc={choiceProps.imgSrc}
           alt={choiceProps.alt}
           id={choiceProps.id}
@@ -28,6 +29,7 @@ function App() {
     <div className="App">
       {questions.map(questionProps => (
         <Question
+          key={questionProps.prompt}
           prompt={questionProps.prompt}
           choices={questionProps.choices}
         />
